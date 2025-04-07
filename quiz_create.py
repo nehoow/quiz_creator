@@ -24,3 +24,7 @@ while True:
 
     count += 1
     answers = {}
+    answers['a'] = input("Put answer a: ")
+    answers['b'] = input("Put answer b: ")
+    answers['c'] = input("Put answer c: ")
+    answers['d'] = input("Put answer d: ")
