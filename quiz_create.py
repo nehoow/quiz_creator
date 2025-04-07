@@ -16,15 +16,13 @@
 #Pag di ko masundan matic magtatanong ako. Umamin kyo kagad.
 #Create a demo, send the link of your demo to my messenger before April 12.
 #Upload the source code to your github account using gitbash.
-count = 1
 while True:
     question_input = input("Enter your question or type 'exit' to finish: ")
     if question_input == 'exit':
         break
-
-    count += 1
     answers = {}
     answers['a'] = input("Put answer a: ")
     answers['b'] = input("Put answer b: ")
     answers['c'] = input("Put answer c: ")
     answers['d'] = input("Put answer d: ")
+    correct_answer = input("Enter the correct answer using a,b,c, or d: ")
