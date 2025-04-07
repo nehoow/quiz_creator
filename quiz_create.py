@@ -32,7 +32,7 @@ def create_item():
         print("Invalid input! Enter the correct answer (a,b,c, or d)")
         correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
 
-    return question_input, answers, correct_answer
+    return {'question':question_input, 'answer':answers, 'correct_answer':correct_answer}
 def write_file():
     return
 def main():
