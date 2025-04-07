@@ -17,16 +17,22 @@
 #Create a demo, send the link of your demo to my messenger before April 12.
 #Upload the source code to your github account using gitbash.
 
-while True:
-    question_input = input("Enter your question or type 'exit' to finish: ")
-    if question_input == 'exit':
-        break
+def create_item():
+    question_input = input("Enter your question: ")
     answers = {}
     answers['a'] = input("Enter answer a: ")
     answers['b'] = input("Enter answer b: ")
     answers['c'] = input("Enter answer c: ")
     answers['d'] = input("Enter answer d: ")
+
     correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
     while correct_answer not in ['a','b','c','d']:
         print("Invalid input! Enter the correct answer (a,b,c, or d)")
         correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
+
+    return question_input, answers, correct_answer
+def write_file():
+    return
+def main():
+    create_item()
+main()
