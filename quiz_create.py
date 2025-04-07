@@ -16,3 +16,12 @@
 #Pag di ko masundan matic magtatanong ako. Umamin kyo kagad.
 #Create a demo, send the link of your demo to my messenger before April 12.
 #Upload the source code to your github account using gitbash.
+count = 0
+while True:
+    try:
+        question_input = input(f"Input your {count} question: ")
+        count += 1
+
+
+    except:
+        break
