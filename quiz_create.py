@@ -18,7 +18,9 @@
 #Upload the source code to your github account using gitbash.
 
 def create_item():
-    question_input = input("Enter your question: ")
+    question_input = input("Enter your question or type 'exit' to finish: ")
+    if question_input == "exit":
+        return None
     answers = {}
     answers['a'] = input("Enter answer a: ")
     answers['b'] = input("Enter answer b: ")
@@ -34,5 +36,8 @@ def create_item():
 def write_file():
     return
 def main():
-    create_item()
+    while True:
+        quiz_data = create_item()
+        if quiz_data is None:
+            break
 main()
