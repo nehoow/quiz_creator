@@ -37,6 +37,8 @@ def write_file(quiz_data, filename="quiz.txt"):
     #write file and overwrite the existing txt
     with open(filename, "a") as file:
         file.write(f"Question: {quiz_data['question']}\n")
+        for choice, answers in quiz_data['answers']:
+            file.write(f"{choice}. {answers}\n")
 def main():
     while True:
         quiz_data = create_item()
