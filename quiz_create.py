@@ -16,6 +16,7 @@
 #Pag di ko masundan matic magtatanong ako. Umamin kyo kagad.
 #Create a demo, send the link of your demo to my messenger before April 12.
 #Upload the source code to your github account using gitbash.
+import os
 
 def create_item():
     question_input = input("Enter your question or type 'exit' to finish: ")
@@ -34,9 +35,8 @@ def create_item():
 
     return {'question':question_input, 'answer':answers, 'correct_answer':correct_answer}
 
-def write_file(quiz_data, filename="quiz.txt"):
-    #write file and overwrite the existing txt
-    with open(filename, "a") as file:
+def write_file(quiz_data):
+    with open("quiz.txt", "a") as file:
         file.write(f"Question: {quiz_data['question']}\n")
         for choice, answers in quiz_data['answer'].items():
             file.write(f"{choice}. {answers}\n")
