@@ -33,14 +33,16 @@ def create_item():
         correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
 
     return {'question':question_input, 'answer':answers, 'correct_answer':correct_answer}
+
 def write_file(quiz_data, filename="quiz.txt"):
     #write file and overwrite the existing txt
     with open(filename, "a") as file:
         file.write(f"Question: {quiz_data['question']}\n")
-        for choice, answers in quiz_data['answers']:
+        for choice, answers in quiz_data['answer'].items():
             file.write(f"{choice}. {answers}\n")
         file.write(f"correct answer: {quiz_data['correct_answer']}\n")
         file.write(f"-\n")
+
 def main():
     while True:
         quiz_data = create_item()
