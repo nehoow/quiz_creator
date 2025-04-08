@@ -35,7 +35,8 @@ def create_item():
     return {'question':question_input, 'answer':answers, 'correct_answer':correct_answer}
 def write_file(quiz_data, filename="quiz.txt"):
     #write file and overwrite the existing txt
-    return
+    with open(filename, "a") as file:
+        file.write()
 def main():
     while True:
         quiz_data = create_item()
