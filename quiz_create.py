@@ -28,10 +28,10 @@ def create_item():
     answers['c'] = input("Enter answer c: ")
     answers['d'] = input("Enter answer d: ")
 
-    correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
+    correct_answer = input("Enter the correct answer using (a,b,c, or d): ").lower
     while correct_answer not in ['a','b','c','d']:
         print("Invalid input! Enter the correct answer (a,b,c, or d)")
-        correct_answer = input("Enter the correct answer using (a,b,c, or d): ")
+        correct_answer = input("Enter the correct answer using (a,b,c, or d): ").lower
 
     return {'question':question_input, 'answer':answers, 'correct_answer':correct_answer}
 
@@ -40,15 +40,14 @@ def write_file(quiz_data):
         file.write(f"Question: {quiz_data['question']}\n")
         for choice, answers in quiz_data['answer'].items():
             file.write(f"{choice}. {answers}\n")
-        file.write(f"correct answer: {quiz_data['correct_answer']}\n")
-        file.write(f"-\n")
+        file.write(f"correct answer: {quiz_data['correct_answer']}\n-\n")
 
 def main():
     filename = "quiz.txt"
     if os.path.exists(filename):
         os.remove(filename)
         print(f"Existing file '{filename}' deleted.")
-        
+
     while True:
         quiz_data = create_item()
         if quiz_data is None:
