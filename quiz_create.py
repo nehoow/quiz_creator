@@ -44,6 +44,11 @@ def write_file(quiz_data):
         file.write(f"-\n")
 
 def main():
+    filename = "quiz.txt"
+    if os.path.exists(filename):
+        os.remove(filename)
+        print(f"Existing file '{filename}' deleted.")
+        
     while True:
         quiz_data = create_item()
         if quiz_data is None:
