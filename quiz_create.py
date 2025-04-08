@@ -39,6 +39,7 @@ def write_file(quiz_data, filename="quiz.txt"):
         file.write(f"Question: {quiz_data['question']}\n")
         for choice, answers in quiz_data['answers']:
             file.write(f"{choice}. {answers}\n")
+        file.write(f"correct answer: {quiz_data['correct_answer']}")
 def main():
     while True:
         quiz_data = create_item()
