@@ -3,10 +3,11 @@
 #b. 8
 #d. 20
 #c. 16
-#-
 #correct answer: b
 import random
 
 def read_quiz(quiz_file):
     with open(quiz_file ,"r") as file:
-        
+        questions = []
+        while True:
+            question = file.readline().strip().removeprefix("Question: ")
