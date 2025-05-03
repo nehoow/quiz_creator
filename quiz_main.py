@@ -13,6 +13,6 @@ def read_quiz(quiz_file):
             question = file.readline().strip().removeprefix("Question: ")
             choices = {}
             for i in range(4):
-                choice_line = file.readline().strip()
-                letter, answer = choice_line.split(".")
-                choices[letter.strip] = answer.strip
+                letter, answer = file.readline().strip().split(".")
+                choices[letter.strip()] = answer.strip()
+            correctanswer = file.readline().strip().removeprefix("correct answer: ")
