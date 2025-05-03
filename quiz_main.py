@@ -11,9 +11,12 @@ def read_quiz(quiz_file):
         questions = []
         while True:
             question = file.readline().strip().removeprefix("Question: ")
+            if not question:
+                break
             choices = {}
             for i in range(4):
-                letter, answer = file.readline().strip().split(".")
+                choice_line = file.readline()
+                letter, answer = choice_line.split(".")
                 choices[letter.strip()] = answer.strip()
             correctanswer = file.readline().strip().removeprefix("correct answer: ")
             questions.append({
@@ -25,4 +28,10 @@ def read_quiz(quiz_file):
 def quiz(quiz_data):
     quiz_copy = list(quiz_data)
     random.shuffle(quiz_copy)
-    for i in range(quiz_copy):
+    score = 0
+    for i, questiondict in enumerate(quiz_copy):
+        print(f"\nQuestion {i + 1}: {questiondict['question']}")
+        for letter, choice in questiondict['choices'].items():
+            print(f"{letter}. {choice}")
+file = "quiz.txt"
+quiz(read_quiz(file))
