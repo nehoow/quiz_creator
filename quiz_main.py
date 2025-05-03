@@ -22,3 +22,7 @@ def read_quiz(quiz_file):
                                 "correct_answer": correctanswer
                             })
     return questions
+def quiz(quiz_data):
+    quiz_copy = list(quiz_data)
+    random.shuffle(quiz_copy)
+    for i in range(quiz_copy):
