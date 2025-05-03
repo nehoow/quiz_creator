@@ -47,5 +47,12 @@ def quiz(quiz_data):
             print(f"Incorrect. The correct answer was {questiondict['correct_answer']}.")
 
     print(f"\nQuiz finished! Your final score is {score}/{len(quiz_data)}.")
-#file = "quiz.txt"
-#quiz(read_quiz(file))
+
+def main():
+    quiz_questions = read_quiz("quiz.txt")
+    if quiz_questions:
+        quiz(quiz_questions)
+    else:
+        print("Could not load quiz questions from the file.")
+        
+main()
