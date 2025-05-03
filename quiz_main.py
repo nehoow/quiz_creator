@@ -40,5 +40,12 @@ def quiz(quiz_data):
                 break
             else:
                 print("Invalid input. Please enter the letter corresponding to your choice.")
+        if user_answer == questiondict['correct_answer'].lower():
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Incorrect. The correct answer was {questiondict['correct_answer']}.")
+
+    print(f"\nQuiz finished! Your final score is {score}/{len(quiz_data)}.")
 #file = "quiz.txt"
 #quiz(read_quiz(file))
