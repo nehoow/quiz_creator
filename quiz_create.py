@@ -22,7 +22,7 @@ def write_file(quiz_data):
         file.write(f"Question: {quiz_data['question']}\n")
         for choice, answers in quiz_data['answer'].items():
             file.write(f"{choice}. {answers}\n")
-        file.write(f"correct answer: {quiz_data['correct_answer']}\n-\n")
+        file.write(f"correct answer: {quiz_data['correct_answer']}\n")
 
 def main():
     filename = "quiz.txt"
