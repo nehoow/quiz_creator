@@ -33,5 +33,12 @@ def quiz(quiz_data):
         print(f"\nQuestion {i + 1}: {questiondict['question']}")
         for letter, choice in questiondict['choices'].items():
             print(f"{letter}. {choice}")
-file = "quiz.txt"
-quiz(read_quiz(file))
+
+        while True:
+            user_answer = input("Your answer (enter the letter): ").strip().lower()
+            if user_answer in questiondict['choices']:
+                break
+            else:
+                print("Invalid input. Please enter the letter corresponding to your choice.")
+#file = "quiz.txt"
+#quiz(read_quiz(file))
