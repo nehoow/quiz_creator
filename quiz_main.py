@@ -16,3 +16,9 @@ def read_quiz(quiz_file):
                 letter, answer = file.readline().strip().split(".")
                 choices[letter.strip()] = answer.strip()
             correctanswer = file.readline().strip().removeprefix("correct answer: ")
+            questions.append({
+                                "question": question,
+                                "choices": choices,
+                                "correct_answer": correctanswer
+                            })
+    return questions
