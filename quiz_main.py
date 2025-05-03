@@ -1,10 +1,11 @@
-#Question: what is 4+4
-#a. 4
-#b. 8
-#d. 20
-#c. 16
-#correct answer: b
+
 import random
+
+GREEN = '\033[92m'
+RED = '\033[91m'
+BLUE = '\033[94m'
+YELLOW = '\033[93m'
+RESET = '\033[0m'
 
 def read_quiz(quiz_file):
     with open(quiz_file ,"r") as file:
@@ -30,9 +31,9 @@ def quiz(quiz_data):
     random.shuffle(quiz_copy)
     score = 0
     for i, questiondict in enumerate(quiz_copy):
-        print(f"\nQuestion {i + 1}: {questiondict['question']}")
+        print(f"\n{YELLOW}Question {i + 1}:{RESET} {questiondict['question']}")
         for letter, choice in questiondict['choices'].items():
-            print(f"{letter}. {choice}")
+            print(f"{BLUE}{letter}{RESET}. {choice}")
 
         while True:
             user_answer = input("Your answer (enter the letter): ").strip().lower()
@@ -41,12 +42,12 @@ def quiz(quiz_data):
             else:
                 print("Invalid input. Please enter the letter corresponding to your choice.")
         if user_answer == questiondict['correct_answer'].lower():
-            print("Correct!")
+            print(f"{GREEN}Correct!{RESET}")
             score += 1
         else:
-            print(f"Incorrect. The correct answer was {questiondict['correct_answer']}.")
+            print(f"{RED}Incorrect.{RESET} The correct answer was {GREEN}{questiondict['correct_answer']}{RESET}.")
 
-    print(f"\nQuiz finished! Your final score is {score}/{len(quiz_data)}.")
+    print(f"\n{GREEN}Quiz finished!{RESET} Your final score is {BLUE}{score}/{len(quiz_data)}.{RESET}")
 
 def main():
     quiz_questions = read_quiz("quiz.txt")
