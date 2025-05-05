@@ -41,7 +41,7 @@ def quiz(quiz_data):
                 break
             else:
                 print("Invalid input. Please enter the letter corresponding to your choice.")
-        if user_answer == questiondict['correct_answer'].lower():
+        if user_answer.lower() == questiondict['correct_answer']:
             print(f"{GREEN}Correct!{RESET}")
             score += 1
         else:
